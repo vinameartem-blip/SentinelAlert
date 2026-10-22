@@ -1,5 +1,9 @@
 # 🛰️ SentinelAlert — Космический мониторинг состояния угодий
 
+[![GitHub](https://img.shields.io/badge/GitHub-vinameartem--blip%2FSentinelAlert-181717?logo=github)](https://github.com/vinameartem-blip/SentinelAlert)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)](http://localhost:8501)
+
 Полноценное браузерное веб-приложение на Python (Streamlit) для высокоточного космического мониторинга сельскохозяйственных угодий по данным европейских спутников **Sentinel-2 L2A**.
 
 ---
@@ -44,8 +48,11 @@
 ### 1. Клонирование и подготовка окружения
 
 ```bash
+git clone https://github.com/vinameartem-blip/SentinelAlert.git
+cd SentinelAlert
+
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -57,6 +64,23 @@ streamlit run app.py
 
 После запуска интерфейс будет доступен в браузере по адресу:
 `http://localhost:8501`
+
+### 3. Доступ для других компьютеров в сети
+
+```bash
+streamlit run app.py --server.address 0.0.0.0 --server.port 8501
+```
+
+Затем на любом устройстве в той же сети откройте `http://<IP-этого-компьютера>:8501`
+(IP узнайте командой `ipconfig` в Windows или `ip a` в Linux).
+
+### 4. Хостинг в интернете (Streamlit Community Cloud)
+
+1. Залейте этот репозиторий на GitHub (уже сделано: https://github.com/vinameartem-blip/SentinelAlert)
+2. Откройте https://share.streamlit.io и войдите через аккаунт GitHub
+3. **New app** → выберите репозиторий `vinameartem-blip/SentinelAlert`, ветку `main`, файл `app.py`
+4. Нажмите **Deploy** — через пару минут сайт будет доступен по ссылке вида
+   `https://sentinelalert.streamlit.app` с любого компьютера и телефона
 
 ---
 
