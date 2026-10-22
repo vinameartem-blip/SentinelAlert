@@ -1,0 +1,12 @@
+.venv
+__pycache__
+.DS_Store
+.env
+*.pyc
+Test/
+
+# --- Дополнительно для публикации ---
+.antigravity/
+Backup/
+.streamlit/
+*.log
